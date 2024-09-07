@@ -4,6 +4,7 @@
 
 body{
     background-color: #36454F;
+    align-items: center;
 }
 
 #canvas{
@@ -11,4 +12,18 @@ body{
     border: 1px solid #101314;
     margin: 20px auto;
     background-color: #101314;
+}
+
+button{
+    background-color: yellow;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    margin: auto;
+}
+
+#btn-container{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: fit-content;
 }

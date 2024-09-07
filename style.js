@@ -1,6 +1,11 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+const up = document.getElementById("up");
+const down = document.getElementById("down");
+const right = document.getElementById("right");
+const left = document.getElementById("left");
+
 const ballz = [];
 const wallz = [];
 
@@ -70,6 +75,7 @@ class Ball{
         this.velocity = 1;
         this.elasticity = 1;
         this.player = false;
+        this.ballColor = "#FFFFFA";
         ballz.push(this);
     }
 
@@ -78,7 +84,8 @@ class Ball{
         ctx.arc(this.pos.x, this.pos.y, this.r, 0, 2*Math.PI);
         ctx.strokeStyle = "black";
         ctx.stroke();
-        ctx.fillStyle = "#FFFFFA";
+        //ctx.fillStyle = "#FFFFFA";
+        ctx.fillStyle = this.ballColor;
         ctx.fill();
     }
     display() {
@@ -117,6 +124,71 @@ class Wall{
 }
 
 function keyControl(b) {
+
+    up.addEventListener("touchstart", function(e) {
+        UP = true;
+    })
+
+    up.addEventListener("touchend", function(e) {
+        UP = false;
+    })
+
+    up.addEventListener("mousedown", function(e) {
+        UP = true;
+    })
+
+    up.addEventListener("mouseup", function(e) {
+        UP = false;
+    })
+
+    down.addEventListener("touchstart", function(e) {
+        DOWN = true;
+    })
+
+    down.addEventListener("touchend", function(e) {
+        DOWN = false;
+    })
+
+    down.addEventListener("mousedown", function(e) {
+        DOWN = true;
+    })
+
+    down.addEventListener("mouseup", function(e) {
+        DOWN = false;
+    })
+
+    left.addEventListener("touchstart", function(e) {
+        LEFT = true;
+    })
+
+    left.addEventListener("touchend", function(e) {
+        LEFT = false;
+    })
+
+    left.addEventListener("mousedown", function(e) {
+        LEFT = true;
+    })
+
+    left.addEventListener("mouseup", function(e) {
+        LEFT = false;
+    })
+
+    right.addEventListener("touchstart", function(e) {
+        RIGHT = true;
+    })
+
+    right.addEventListener("touchend", function(e) {
+        RIGHT = false;
+    })
+
+    right.addEventListener("mousedown", function(e) {
+        RIGHT = true;
+    })
+
+    right.addEventListener("mouseup", function(e) {
+        RIGHT = false;
+    })
+
     canvas.addEventListener("keydown", function(e) {
         if (e.keyCode === 37) {
             LEFT = true;
@@ -280,4 +352,5 @@ let edge2 = new Wall(canvas.clientWidth, 0, canvas.clientWidth, canvas.clientHei
 let edge3 = new Wall(canvas.clientWidth, canvas.clientHeight, 0, canvas.clientHeight);
 let edge4 = new Wall(0, canvas.clientHeight, 0, 0);
 ballz[0].player = true;
+ballz[0].ballColor = "brown";
 requestAnimationFrame(mainLoop);
