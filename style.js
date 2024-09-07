@@ -280,5 +280,4 @@ let edge2 = new Wall(canvas.clientWidth, 0, canvas.clientWidth, canvas.clientHei
 let edge3 = new Wall(canvas.clientWidth, canvas.clientHeight, 0, canvas.clientHeight);
 let edge4 = new Wall(0, canvas.clientHeight, 0, 0);
 ballz[0].player = true;
-ballz[0].elasticity = 3;
 requestAnimationFrame(mainLoop);
