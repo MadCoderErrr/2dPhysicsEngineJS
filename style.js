@@ -340,13 +340,24 @@ function mainLoop(timestamp) {
     requestAnimationFrame(mainLoop);
 };
 
-for (let i = 0; i < 10; i++) {
-    let newBall = new Ball(randInt(100,500), randInt(50,400), randInt(20,50), randInt(0,10));
-    newBall.elasticity = randInt(0,10)/10;
-}
+if (window.matchMedia("(max-height: 400px)").matches) {
+    canvas.height = 280;
+    for (let i = 0; i < 10; i++) {
+        let newBall = new Ball(randInt(100,500), randInt(50,200), randInt(20,45), randInt(0,10));
+        newBall.elasticity = randInt(0,10)/10;
+    }
+    let wall1 = new Wall(100, 100, 250, 200);
+    let wall2 = new Wall(300, 180, 450, 80);
+  } else {
+    canvas.height = canvas.clientHeight;
+    for (let i = 0; i < 10; i++) {
+        let newBall = new Ball(randInt(100,500), randInt(50,400), randInt(20,50), randInt(0,10));
+        newBall.elasticity = randInt(0,10)/10;
+    }
+    let wall1 = new Wall(200, 200, 400, 300);
+    let wall2 = new Wall(350, 450, 450, 300);
+  }
 
-let wall1 = new Wall(200, 200, 400, 300);
-let wall2 = new Wall(350, 450, 450, 300);
 let edge1 = new Wall(0, 0, canvas.clientWidth, 0);
 let edge2 = new Wall(canvas.clientWidth, 0, canvas.clientWidth, canvas.clientHeight);
 let edge3 = new Wall(canvas.clientWidth, canvas.clientHeight, 0, canvas.clientHeight);
