@@ -15,11 +15,34 @@ body{
 }
 
 button{
-    background-color: yellow;
+    /*border: 1px solid #101314;*/
     border: none;
     border-radius: 50%;
-    padding: 10px 15px;
-    margin: auto;
+    background-color: #FFFFFA;
+}
+
+#up {
+    background-repeat: no-repeat;
+    background-image: url("up.png");
+    /*padding: 15px 25px 15px 20px;*/
+    padding: 16px;
+}
+
+#left {
+    background-image: url("left2.png");
+    background-repeat: no-repeat;
+    padding: 16px;
+}
+
+#down {
+    background-image: url("down.png");
+    padding: 16px;
+}
+
+#right {
+    background-image: url("right1.png");
+    background-repeat: no-repeat;
+    padding: 16px;
 }
 
 #btn-container{

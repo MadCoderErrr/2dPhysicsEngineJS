@@ -10,7 +10,7 @@ const ballz = [];
 const wallz = [];
 
 let LEFT, RIGHT, UP, DOWN;
-let friction = 0.1;
+let friction = 0.0;
 
 class Vector{
     constructor(x, y){
