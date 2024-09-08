@@ -340,7 +340,7 @@ function mainLoop(timestamp) {
     requestAnimationFrame(mainLoop);
 };
 
-if (window.matchMedia("(max-height: 400px)").matches) {
+if (window.matchMedia("(max-height: 500px)").matches) {
     canvas.height = 280;
     for (let i = 0; i < 10; i++) {
         let newBall = new Ball(randInt(100,500), randInt(50,200), randInt(20,45), randInt(0,10));
